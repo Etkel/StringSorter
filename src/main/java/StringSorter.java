@@ -18,6 +18,7 @@ public class StringSorter {
     public List<String> sortStrings(List<String> unsortedStrings, String exceptionChar) {
         List<String> startsWithException = new ArrayList<>();
         List<String> otherStrings = new ArrayList<>();
+
         for (String str : unsortedStrings) {
             if (str.startsWith(exceptionChar)) {
                 startsWithException.add(str);
@@ -27,6 +28,7 @@ public class StringSorter {
         }
         startsWithException.sort(Collections.reverseOrder());
         Collections.sort(otherStrings);
+
         otherStrings.addAll(startsWithException);
         return otherStrings;
     }
